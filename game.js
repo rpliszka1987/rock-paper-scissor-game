@@ -1,3 +1,6 @@
+// Rock Paper Scissor Simple game
+
+// Function for user inputs. Tests to make sure user chose one of the available options
 const getUserChoice = (userInput) => {
   userInput = userInput.toLowerCase();
 
@@ -14,6 +17,7 @@ const getUserChoice = (userInput) => {
   }
 };
 
+// Function generates the computer choice using random number
 const getComputerChoice = () => {
   var randomNumber = Math.floor(Math.random() * 3);
 
@@ -30,6 +34,7 @@ const getComputerChoice = () => {
   }
 };
 
+// Function determines the winner
 const determineWinner = (userChoice, computerChoice) => {
   if (userChoice === computerChoice) {
     return "Game was a tie";
@@ -56,7 +61,9 @@ const determineWinner = (userChoice, computerChoice) => {
   }
 };
 
+// Play game function to get the game going
 function playGame() {
+  // User choice for the game
   var userChoice = getUserChoice("bomb");
   var computerChoice = getComputerChoice();
   console.log(
@@ -65,4 +72,5 @@ function playGame() {
   console.log(determineWinner(userChoice, computerChoice));
 }
 
+// Calling playGame() to begin the game
 playGame();
